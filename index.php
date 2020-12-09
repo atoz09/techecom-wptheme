@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header('home'); ?>
 	
 	<!-- Slider Area -->
 	<section class="hero-slider">
@@ -1825,42 +1825,27 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Start Single Blog  -->
-					<div class="shop-single-blog">
-						<img src="https://via.placeholder.com/370x300" alt="#">
-						<div class="content">
-							<p class="date">22 July , 2020. Monday</p>
-							<a href="#" class="title">Sed adipiscing ornare.</a>
-							<a href="#" class="more-btn">Continue Reading</a>
+				<?php
+					if(have_posts()):
+						while(have_posts()):
+							the_post();?>
+					<div class="col-lg-4 col-md-6 col-12">
+						<!-- Start Single Blog  -->
+						<div class="shop-single-blog">
+							<?php the_post_thumbnail();?>
+							<div class="content">
+								<p class="date"><?php the_date('d M, Y. D');?></p>
+								<a href="<?php the_permalink(); ?>" class="title"><?php the_title();?></a>
+								<a href="<?php the_permalink(); ?>" class="more-btn">Continue Reading</a>
+							</div>
 						</div>
+						<!-- End Single Blog  -->
 					</div>
-					<!-- End Single Blog  -->
-				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Start Single Blog  -->
-					<div class="shop-single-blog">
-						<img src="https://via.placeholder.com/370x300" alt="#">
-						<div class="content">
-							<p class="date">22 July, 2020. Monday</p>
-							<a href="#" class="title">Man’s Fashion Winter Sale</a>
-							<a href="#" class="more-btn">Continue Reading</a>
-						</div>
-					</div>
-					<!-- End Single Blog  -->
-				</div>
-				<div class="col-lg-4 col-md-6 col-12">
-					<!-- Start Single Blog  -->
-					<div class="shop-single-blog">
-						<img src="https://via.placeholder.com/370x300" alt="#">
-						<div class="content">
-							<p class="date">22 July, 2020. Monday</p>
-							<a href="#" class="title">Women Fashion Festive</a>
-							<a href="#" class="more-btn">Continue Reading</a>
-						</div>
-					</div>
-					<!-- End Single Blog  -->
-				</div>
+					<?php	endwhile;
+					endif;
+				?>
+			
+			
 			</div>
 		</div>
 	</section>
