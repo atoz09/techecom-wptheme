@@ -13,6 +13,7 @@ function te_script(){
     wp_enqueue_style( 'owl-carousel', $uri.'/css/owl-carousel.css' );
     wp_enqueue_style( 'slicknav', $uri.'/css/slicknav.min.css' );
     wp_enqueue_style( 'reset', $uri.'/css/reset.css' );
+    wp_enqueue_style( 'te_woo_css', $uri.'/css/woo.css' );
     wp_enqueue_style( 'style', $uri.'/style.css' );
     wp_enqueue_style( 'responsive', $uri.'/css/responsive.css' );
 

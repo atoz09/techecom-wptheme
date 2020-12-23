@@ -29,8 +29,8 @@ get_header( 'shop' );
 do_action( 'woocommerce_before_main_content' );
 
 ?>
-<h1>Theme page</h1>
-<header class="woocommerce-products-header">
+
+<!-- <header class="woocommerce-products-header">
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
 	<?php endif; ?>
@@ -44,7 +44,16 @@ do_action( 'woocommerce_before_main_content' );
 	 */
 	do_action( 'woocommerce_archive_description' );
 	?>
-</header>
+</header> -->
+<section class="product-area shop-sidebar shop section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-4 col-12">
+				<?php do_action( 'woocommerce_sidebar' ); ?>
+			</div>
+			<div class="col-lg-9 col-md-8 col-12">
+
+			
 <?php
 if ( woocommerce_product_loop() ) {
 
@@ -55,8 +64,44 @@ if ( woocommerce_product_loop() ) {
 	 * @hooked woocommerce_result_count - 20
 	 * @hooked woocommerce_catalog_ordering - 30
 	 */
-	do_action( 'woocommerce_before_shop_loop' );
+	?>
+	<div class="row">
+							<div class="col-12">
+								<!-- Shop Top -->
+								<div class="shop-top">
+									<div class="shop-shorter">
+										<div class="single-shorter">
+											<label>Show :</label>
+											<select style="display: none;">
+												<option selected="selected">09</option>
+												<option>15</option>
+												<option>25</option>
+												<option>30</option>
+											</select><div class="nice-select" tabindex="0"><span class="current">09</span><ul class="list"><li data-value="09" class="option selected">09</li><li data-value="15" class="option">15</li><li data-value="25" class="option">25</li><li data-value="30" class="option">30</li></ul></div>
+										</div>
+										<div class="single-shorter">
+											<label>Sort By :</label>
+											<select style="display: none;">
+												<option selected="selected">Name</option>
+												<option>Price</option>
+												<option>Size</option>
+											</select><div class="nice-select" tabindex="0"><span class="current">Name</span><ul class="list"><li data-value="Name" class="option selected">Name</li><li data-value="Price" class="option">Price</li><li data-value="Size" class="option">Size</li></ul></div>
+										</div>
+									</div>
+									<ul class="view-mode">
+										<li class="active"><a href="shop-grid.html"><i class="fa fa-th-large"></i></a></li>
+										<li><a href="shop-list.html"><i class="fa fa-th-list"></i></a></li>
+									</ul>
+								</div>
+								<!--/ End Shop Top -->
+							</div>
+						</div>
 
+	<?php
+	do_action( 'woocommerce_before_shop_loop' );
+	?>
+	
+	<?php
 	woocommerce_product_loop_start();
 
 	if ( wc_get_loop_prop( 'total' ) ) {
@@ -73,7 +118,9 @@ if ( woocommerce_product_loop() ) {
 	}
 
 	woocommerce_product_loop_end();
+	?>
 
+	<?php
 	/**
 	 * Hook: woocommerce_after_shop_loop.
 	 *
@@ -95,12 +142,10 @@ if ( woocommerce_product_loop() ) {
  * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
  */
 do_action( 'woocommerce_after_main_content' );
-
-/**
- * Hook: woocommerce_sidebar.
- *
- * @hooked woocommerce_get_sidebar - 10
- */
-do_action( 'woocommerce_sidebar' );
-
+?>
+</div>
+</div>
+</div>
+</section>
+<?php
 get_footer( 'shop' );

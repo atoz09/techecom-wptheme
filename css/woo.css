@@ -1,0 +1,14 @@
+.woocommerce .products ul, .woocommerce ul.products {
+    margin: 14px;
+}
+button.yith-wcqv-button {
+	content: "\e63d";
+    font-family: 'themify';
+    margin:1px;
+    padding:1px;
+}
+button.yith-wcqv-button:hover{
+	color: #F7941D;
+	
+}
+    
