@@ -24,6 +24,11 @@ global $product;
  *
  * @hooked woocommerce_output_all_notices - 10
  */
+?>
+
+		 
+
+<?php
 do_action( 'woocommerce_before_single_product' );
 
 if ( post_password_required() ) {
@@ -42,7 +47,6 @@ if ( post_password_required() ) {
 	 */
 	do_action( 'woocommerce_before_single_product_summary' );
 	?>
-
 	<div class="summary entry-summary">
 		<?php
 		/**

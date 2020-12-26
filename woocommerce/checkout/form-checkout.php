@@ -28,7 +28,10 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 }
 
 ?>
-
+<div class="col-lg-8 col-12">
+	<div class="checkout-form">
+		<h2>Make Your Checkout Here</h2>
+		<p>Please register in order to checkout more quickly</p>
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 
 	<?php if ( $checkout->get_checkout_fields() ) : ?>
@@ -62,5 +65,6 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 	<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 
 </form>
-
+</div>
+</div>
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>

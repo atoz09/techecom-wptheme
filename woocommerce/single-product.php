@@ -20,7 +20,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
-
+<section class="blog-single section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-12">
+			
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
@@ -46,7 +50,9 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_after_main_content' );
 	?>
-
+	
+			</div>
+			<div class="col-lg-4 col-12">
 	<?php
 		/**
 		 * woocommerce_sidebar hook.
@@ -56,6 +62,10 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_sidebar' );
 	?>
 
+	</div>
+		</div>
+	</div>
+</section>
 <?php
 get_footer( 'shop' );
 
